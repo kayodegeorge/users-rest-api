@@ -22,7 +22,7 @@ To set up and run a PostgreSQL instance for the NestJS application, follow these
 2. Run the following command in your terminal to start the PostgreSQL container:
 
    ```bash
-   docker-compose up -d
+   docker compose up
    ```
 
 ## Compile and run the project
