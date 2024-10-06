@@ -1,0 +1,23 @@
+services:
+  postgres:
+    image: postgres:15-alpine
+    container_name: postgres_nestjs
+    environment:
+      POSTGRES_USER: nestuser
+      POSTGRES_PASSWORD: nestpassword
+      POSTGRES_DB: nestdb
+    ports:
+      - '5432:5432'
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - nest_network
+    restart: unless-stopped
+
+volumes:
+  postgres_data:
+    name: nestjs_postgres_data
+
+networks:
+  nest_network:
+    name: nest_network
